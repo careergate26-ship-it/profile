@@ -1,0 +1,346 @@
+  /* العوامل الأساسية الفاخرة والاستجابة المرنة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        body {
+            background-color: #030712;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(147, 51, 234, 0.12) 0px, transparent 50%);
+            color: #f3f4f6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* مساحات أمان ديناميكية للشاشات الصغيرة */
+            padding: clamp(20px, 5vw, 50px) clamp(10px, 3vw, 20px);
+            overflow-x: hidden;
+        }
+
+        /* حاوية التصميم الرقمي الفخم والاستجابة الذكية */
+        .ultra-card {
+            position: relative;
+            width: 100%;
+            /* clamp تجعل العرض يتكيف ديناميكياً بين أقل عرض وأقصى عرض */
+            max-width: 780px;
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: clamp(20px, 4vw, 32px);
+            padding: clamp(25px, 6vw, 50px) clamp(15px, 5vw, 40px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            z-index: 1;
+        }
+
+        /* تأثير خط النيون العلوي المتوهج */
+        .ultra-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #3b82f6, #9333ea, transparent);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.8);
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* الهيدر والصورة الشخصية */
+        .header-wrapper {
+            text-align: center;
+            margin-bottom: clamp(25px, 5vw, 40px);
+        }
+
+        .avatar-box {
+            position: relative;
+            /* حجم مرن يتغير بناءً على حجم الشاشة */
+            width: clamp(110px, 18vw, 150px);
+            height: clamp(110px, 18vw, 150px);
+            margin: 0 auto 20px auto;
+        }
+
+        .avatar-box .pulse-ring {
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #9333ea);
+            padding: 3px;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0b0f19;
+            background: #111827;
+        }
+
+        .main-name {
+            font-size: clamp(22px, 5vw, 32px);
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
+            background: linear-gradient(to left, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: clamp(13px, 3vw, 15px);
+            color: #9ca3af;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap; /* تمنع انكسار النص بشكل عشوائي على الهواتف الصغيرة */
+        }
+
+        .subtitle span {
+            width: 6px;
+            height: 6px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #22c55e;
+            display: inline-block;
+        }
+
+        /* زر الخرائط ثلاثي الأبعاد المضيء */
+        .gps-anchor {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            color: #cbd5e1;
+            padding: 12px 24px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: clamp(12px, 2.5vw, 14px);
+            font-weight: 600;
+            margin-top: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            width: auto;
+            max-width: 100%;
+        }
+
+        .gps-anchor:hover {
+            background: linear-gradient(135deg, #ef4444, #b91c1c);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* العناوين والأقسام النيون */
+        .section-box {
+            margin-bottom: clamp(25px, 5vw, 40px);
+        }
+
+        .title-container {
+            font-size: clamp(16px, 4vw, 20px);
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-container i {
+            background: linear-gradient(135deg, #3b82f6, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: clamp(18px, 4vw, 22px);
+        }
+
+        /* نص النبذة التعريفية */
+        .about-text {
+            font-size: clamp(13px, 3.5vw, 15px);
+            color: #9ca3af;
+            line-height: 1.8;
+            background: rgba(255, 255, 255, 0.01);
+            padding: clamp(15px, 4vw, 20px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            text-align: justify;
+        }
+
+        /* شبكة مهارات مرنة تعتمد على محتوى النص لعدم الخروج عن الشاشة */
+        .skills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-node {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: clamp(12px, 3vw, 14px);
+            color: #9ca3af;
+            font-weight: 600;
+        }
+
+        .skill-node:hover {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+            border-color: #3b82f6;
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+            transform: translateY(-3px);
+        }
+
+        /* لوحات عرض الخبرات الأنيقة */
+        .timeline-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: clamp(15px, 4vw, 25px);
+            border-radius: 16px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .timeline-card::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20px;
+            height: 30px;
+            width: 4px;
+            background: #9333ea;
+            border-radius: 4px 0 0 4px;
+            box-shadow: -2px 0 10px #9333ea;
+        }
+
+        .timeline-card h4 { font-size: clamp(15px, 3.5vw, 18px); color: #fff; font-weight: 700; }
+        .timeline-card .company { font-size: 12px; color: #3b82f6; font-weight: 600; margin: 4px 0 10px 0; font-family: 'Orbitron', sans-serif;}
+        .timeline-card .text { font-size: clamp(13px, 3vw, 14px); color: #9ca3af; line-height: 1.7; }
+
+        /* الأوراق الثبوتية الفخمة جداً (Responsive Grid) */
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* تتحول تلقائياً لعمود واحد عند صغر الشاشة */
+            gap: 15px;
+        }
+
+        .document-vault {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .document-vault h4 { font-size: clamp(14px, 3.5vw, 16px); color: #e5e7eb; margin-bottom: 15px; }
+        
+        /* جعل الأزرار مرنة وتتحمل الأجهزة التي تعمل باللمس */
+        .vault-actions { 
+            display: flex; 
+            gap: 10px; 
+        }
+
+        .v-btn {
+            flex: 1;
+            padding: 12px 8px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: clamp(12px, 2.8vw, 13px);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            min-height: 44px; /* متوافق مع معايير اللمس للهواتف الذكية */
+        }
+
+        .v-btn-glass {
+            background: rgba(255, 255, 255, 0.05);
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .v-btn-glass:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+
+        .v-btn-neon {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: #fff;
+        }
+        .v-btn-neon:hover {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+            transform: scale(1.02);
+        }
+
+        /* شبكة أزرار التواصل المستوحاة من أنظمة الـ Cyber (Responsive Grid) */
+        .connect-matrix {
+            display: grid;
+            /* توفر أفضل توزيع: 4 أعمدة للشاشات الكبيرة، عمودين للهواتف */
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+        }
+
+        .matrix-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 10px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #9ca3af;
+            font-size: clamp(12px, 3vw, 13px);
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            gap: 8px;
+            min-height: 90px;
+        }
+
+        .matrix-item i { font-size: clamp(22px, 5vw, 26px); }
+
+        /* تأثيرات النيون الفريدة */
+        .m-phone:hover { color: #60a5fa; border-color: #3b82f6; box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); background: rgba(59, 130, 246, 0.05); transform: translateY(-3px); }
+        .m-whatsapp:hover { color: #4ade80; border-color: #22c55e; box-shadow: 0 0 20px rgba(34, 197, 94, 0.3); background: rgba(34, 197, 94, 0.05); transform: translateY(-3px); }
+        .m-email:hover { color: #f87171; border-color: #ef4444; box-shadow: 0 0 20px rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05); transform: translateY(-3px); }
+        .m-linkedin:hover { color: #38bdf8; border-color: #0284c7; box-shadow: 0 0 20px rgba(2, 132, 199, 0.3); background: rgba(2, 132, 199, 0.05); transform: translateY(-3px); }
+
+        /* خطوط الفاصل الذكية */
+        .line-break {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            margin: clamp(25px, 5vw, 35px) 0;
+        }
+
+        /* الفوتر السفلي */
+        .footer-text {
+            margin-top: 30px;
+            font-size: 11px;
+            color: #4b5563;
+            letter-spacing: 1px;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+        }
+
+        /* تعديلات مخصصة جداً للهواتف الصغيرة للغاية والمحشورة (صف واحد عند الحاجة) */
+        @media (max-width: 360px) {
+            .vault-actions {
+                flex-direction: column;
+            }
+            .connect-matrix {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
